@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pricedisplay.pricedisplayTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-06T20:36:59" hostname="anastasisgi-ThinkPad-T450" time="0.033">
+  <properties/>
+  <testcase name="displayProductAndPrice()" classname="pricedisplay.pricedisplayTest" time="0.033"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
