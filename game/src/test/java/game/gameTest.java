@@ -1,20 +1,44 @@
 package game;
 
-import org.junit.jupiter.api.DisplayName;
+import static org.mockito.Mockito.*;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class gameTest {
     @Test
-    public void testGetsWordToGuess(){
-        Game game = new Game("Makers");
-        assertEquals("M_____",(game.getWordToGuess()).toString());
+    public void testGetsWordToGuess() {
+        WordChoser mockedWordChoser = mock(WordChoser.class);
+        when(mockedWordChoser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+        Game game = new Game(mockedWordChoser);
+        assertEquals("D________", (game.getWordToGuess()).toString());
     }
 
     @Test
-    public void getsRemainingAndInitialAttempts(){
-        Game game = new Game("Makers");
+    public void getsRemainingAndInitialAttempts() {
+        WordChoser mockedWordChoser = mock(WordChoser.class);
+        when(mockedWordChoser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+        Game game = new Game(mockedWordChoser);
+        assertEquals(10, game.getRemainingAttempts());
+    }
+
+    @Test
+    public void guessLetterTestToReturnFalseAndGetRemainingAttempts(){
+        WordChoser mockedWordChoser = mock(WordChoser.class);
+        when(mockedWordChoser.getRandomWordFromDictionary()).thenReturn("MAKERS");
+        Game game = new Game(mockedWordChoser);
+        assertEquals(false,game.guessLetter('O'));
+        assertEquals(9,game.getRemainingAttempts());
+    }
+
+    @Test
+    public void guessLetterTestToReturnTrueAndGetRemainingAttempts(){
+        WordChoser mockedWordChoser = mock(WordChoser.class);
+        when(mockedWordChoser.getRandomWordFromDictionary()).thenReturn("MAKERS");
+        Game game = new Game(mockedWordChoser);
+        assertEquals(true,game.guessLetter('M'));
         assertEquals(10,game.getRemainingAttempts());
     }
 }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.gameTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-09T19:05:53" hostname="anastasisgi-ThinkPad-T450" time="0.045">
+<testsuite name="game.gameTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-06-23T07:41:52" hostname="anastasisgi-ThinkPad-T450" time="0.759">
   <properties/>
-  <testcase name="testGetsWordToGuess()" classname="game.gameTest" time="0.041"/>
-  <testcase name="getsRemainingAndInitialAttempts()" classname="game.gameTest" time="0.002"/>
+  <testcase name="guessLetterTestToReturnFalseAndGetRemainingAttempts()" classname="game.gameTest" time="0.746"/>
+  <testcase name="testGetsWordToGuess()" classname="game.gameTest" time="0.003"/>
+  <testcase name="getsRemainingAndInitialAttempts()" classname="game.gameTest" time="0.003"/>
+  <testcase name="guessLetterTestToReturnTrueAndGetRemainingAttempts()" classname="game.gameTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
