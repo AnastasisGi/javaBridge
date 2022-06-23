@@ -1,6 +1,8 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class App {
     public static void main(String[] args) {
@@ -8,9 +10,11 @@ public class App {
 
         WordChoser chooser = new WordChoser();
         Game game = new Game(chooser);
-        System.out.printf("Welcome! Today the word to guess is: \n%s", game.getWordToGuess());
+        Character letter;
+
+        System.out.printf("Welcome! Today the word to guess is: \n%s", game.getWordToGuess(null));
         do {
-       
+
 
             System.out.printf("\nEnter one letter to guess  (%s attemprs remaining)", game.getRemainingAttempts());
 
@@ -20,6 +24,8 @@ public class App {
 
             if (result) {
                 System.out.println("Right!");
+
+                System.out.printf(game.getWordToGuess(guess));
             } else {
                 System.out.printf("Wrong ..");
             }

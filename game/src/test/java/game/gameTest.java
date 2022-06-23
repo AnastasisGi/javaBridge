@@ -13,7 +13,7 @@ public class gameTest {
         WordChoser mockedWordChoser = mock(WordChoser.class);
         when(mockedWordChoser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
         Game game = new Game(mockedWordChoser);
-        assertEquals("D________", (game.getWordToGuess()).toString());
+        assertEquals("D________", (game.getWordToGuess(null)).toString());
     }
 
     @Test

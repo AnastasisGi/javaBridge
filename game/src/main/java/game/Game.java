@@ -22,17 +22,30 @@ public class Game {
     }
 
 
-    public StringBuilder getWordToGuess() {
+    public String getWordToGuess(Character letter) {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < this.word.length(); i++) {
             Character currentLetter = this.word.charAt(i);
             if(i==0){builder.append(currentLetter);}
-            else {builder.append("_");}
-        }
+            else {
 
-        return builder;
+                if (guessedLetterArray.indexOf(currentLetter)!=-1) {
+
+                    builder.append(currentLetter);
+
+
+                } else {
+                    builder.append("_");
+                }
+                }
+
+            }
+        return builder.toString();
     }
+
+
+
 
         public Boolean guessLetter(Character letter){
 
